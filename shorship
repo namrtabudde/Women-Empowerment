@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Page</title>
+    <style>
+        /* Your CSS styles go here */
+        /* Style the page as you like */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('file:///C:/Users/DELL/Downloads/sholarship.jpg'); /* Replace 'your-image-url.jpg' with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Scholarship Page</h1>
+        <p>Explore Scholarship Opportunities</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Available Scholarships</h2>
+        <ul>
+            <li>
+                <h3>Scholarship Name 1</h3>
+                <p>Description of the first scholarship. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#">Learn More</a>
+            </li>
+            <li>
+                <h3>Scholarship Name 2</h3>
+                <p>Description of the second scholarship. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#">Learn More</a>
+            </li>
+            <!-- Add more scholarship entries as needed -->
+        </ul>
+    </div>
+
+    <script>
+        // Your JavaScript code can go here
+        // You can add interactivity or functionality as required
+    </script>
+</body>
+</html>

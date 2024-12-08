@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Empowerment Videos</title>
+    <style>
+        /* Add your CSS styles here */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .video {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 560px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .video h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container" id="videoContainer"></div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to initialize the YouTube Data API client
+            function loadClient() {
+                gapi.client.setApiKey('AIzaSyC5NtNDvpLhF8VfMVMnTOIwdtEFpCc28go'); // Replace with your actual API key
+                return gapi.client.load('https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest')
+                    .then(function() { 
+                        console.log('GAPI client loaded for API');
+                        execute(); // Call the function to fetch and display videos
+                    }, 
+                    function(err) { 
+                        console.error('Error loading GAPI client for API', err); 
+                    });
+            }
+
+            // Function to fetch videos from specific YouTube channels
+            function execute() {
+                // Replace with actual channel IDs
+                const channels = ['UC4MyY-3T2Pjcn2zF53x4P6A']; // Josh Talks channel ID
+
+                let requests = channels.map(channelId => {
+                    return gapi.client.youtube.search.list({
+                        'part': 'snippet',
+                        'channelId': channelId,
+                        'maxResults': 5
+                    });
+                });
+
+                Promise.all(requests).then(responses => {
+                    responses.forEach(response => {
+                        console.log('Response', response);
+                        displayVideos(response.result.items);
+                    });
+                }).catch(err => {
+                    console.error('Execute error', err);
+                });
+            }
+
+            // Function to display the fetched videos
+            function displayVideos(videos) {
+                var videoContainer = document.getElementById('videoContainer');
+                videos.forEach(function(video) {
+                    var videoElement = document.createElement('div');
+                    videoElement.classList.add('video');
+                    videoElement.innerHTML = `
+                        <h3>${video.snippet.title}</h3>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/${video.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                    `;
+                    videoContainer.appendChild(videoElement);
+                });
+            }
+
+            // Load the API client and initialize
+            gapi.load('client', loadClient);
+        });
+    </script>
+</body>
+</html>

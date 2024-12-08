@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpowerHER - Women Empowerment in Business</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            background-color: #ed7a7a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header::before,
+        header::after {
+            content: "";
+            position: absolute;
+            background-image: url('file:///C:/Users/DELL/Pictures/left.jpg'); /* Path to the left image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 250px; /* Adjust the width as needed */
+            height: 150px; /* Adjust the height as needed */
+        }
+        header::before {
+            top: 50%;
+            left: 30px; /* Adjust the left position as needed */
+            transform: translateY(-50%);
+        }
+        header::after {
+            top: 50%;
+            right: 10px; /* Adjust the right position as needed */
+            transform: translateY(-50%);
+            background-image: url('file:///C:/Users/DELL/Pictures/pranita.jpg'); /* Path to the right image */
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: white;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 1rem;
+        }
+        .inspirational-women-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .inspirational-woman {
+            text-align: center;
+            flex: 1;
+            max-width: 30%; /* Adjust as needed for image width */
+            margin: 0 10px; /* Adjust as needed for spacing */
+        }
+        .inspirational-woman img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EmpowerHER</h1>
+        <p>Empowering Women in the Business World</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="idea.html">Business idea</a>
+            <a href="inspirational.html">Business Women</a>
+            <a href="sholarship.html">Scholarship</a>
+            <a href="login.html">Login</a>
+            <a href="youtube channel.html">YouTube Channel</a>
+             <!-- Link to your YouTube channel page -->
+        </nav>
+    </header>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Hello Everyone!, I'm a passionate advocate for women empowerment in the business sector. I'm dedicated to breaking barriers and promoting gender equality.</p>
+        
+        <h2>My Mission</h2>
+        <p>My mission is to inspire, educate, and support women who aspire to excel in the business world. Through mentoring, workshops, and networking events, I aim to create a community that fosters growth and confidence.</p>
+        
+        <h2>Get Involved</h2>
+        <p>If you share my passion for women's empowerment and business, let's connect! Join our events, participate in workshops, and let's work together to create a more inclusive and equitable business landscape.</p>
+        <div class="inspirational-women-container">
+            <div class="inspirational-woman">
+                <h1>Sudha Murty</h1>
+                <img src="file:///C:/Users/DELL/Pictures/sudha%20murthy.jpg" alt="Sudha Murty">
+                <p>Sudha Murty (née Kulkarni; born 19 August 1950) is an Indian educator, author, and philanthropist who is the chairperson of the Infosys Foundation. She is married to the co-founder of Infosys, N. R. Narayana Murty. Murty was awarded the Padma Shri, the fourth highest civilian award in India, for social work by the Government of India in 2006.</p>
+            </div>
+            <div class="inspirational-woman">
+                <h1>Falguni Nayar</h1>
+                <img src="file:///C:/Users/DELL/Downloads/FALgauni.webp" alt="Falguni Nayar">
+                <p>Falguni Nayar is the Founder & CEO of Nykaa, an online retail store for beauty and body care products. She revolutionized the beauty industry in India, bridging the gap between Indian markets and Western markets.</p>
+            </div>
+            <div class="inspirational-woman">
+                <h1>Namita Thapar</h1>
+                <img src="file:///C:/Users/DELL/Downloads/namita.jpg" alt="Namita Thapar">
+                <p>Namita Thapar is an Indian entrepreneur and the Executive Director of Emcure Pharmaceuticals. She has been a significant figure in the Indian pharmaceutical industry and is known for her work in advancing healthcare in India.</p>
+            </div>
+        </div>
+    </div>
+    <div id="scholarshipInfo" style="display: none;">
+        <h2>Scholarship Information</h2>
+        <p>This is the scholarship information. You can find more details on our <a href="https://www.buddy4study.com/article/scholarships-for-indian-girls-and-women" target="_blank">Scholarship Page</a>.</p>
+    </div>
+    <button id="changeBackgroundColor">Change Background Color</button>
+
+    <script>
+        // JavaScript to change background color
+        const button = document.getElementById("changeBackgroundColor");
+        button.addEventListener("click", function () {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+        
+        // JavaScript to show scholarship information
+        const scholarshipTab = document.getElementById("scholarshipTab");
+        const scholarshipInfo = document.getElementById("scholarshipInfo");
+
+        scholarshipTab.addEventListener("click", function () {
+            scholarshipInfo.style.display = "block";
+        });
+
+        // Generate a random color
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
